@@ -1,0 +1,302 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block title %}
+budModa
+{% endblock %}
+
+{% block head %}
+<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#E5730D">
+  <link rel="icon" type="image/svg+xml" href="{% static 'img/favicon.svg'%}">
+  <link rel="stylesheet" href="{% static 'styles/normalize.css'%}">
+  <link rel="stylesheet" href="{% static 'styles/style.css'%}">
+  <link rel="stylesheet" href="{% static 'styles/goods.css'%}">
+
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
+  <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+{% endblock %}
+
+{% block content %}
+    <header class="header">
+    <div class="menuAndLogo">
+      <div class="menu-btn">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <img src="{% static 'img/logo.svg'%}" alt="logo" class="logo">
+      <div class="invs"></div>
+    </div>
+    <div class="phones">
+      <a href="tel:0506555414" class="phones__number">
+        <img src="{% static 'img/phoneInSquare.svg' %}" alt="phone">
+        050 6 555414
+      </a>
+      <a href="tel:0681555414" class="phones__number">
+        <img src="{% static 'img/phoneInSquare.svg' %}" alt="phone">
+        068 1 555414
+      </a>
+    </div>
+    <div class="desktop">
+      <div class="container">
+        <div class="location">
+          <div class="phones">
+            <a href="tel:0506555414" class="phones__number">
+              <img src="{% static 'img/phoneInSquare.svg' %}" alt="phone">
+              050 6 555414
+            </a>
+            <a href="tel:0681555414" class="phones__number">
+              <img src="{% static 'img/phoneInSquare.svg' %}" alt="phone">
+              068 1 555414
+            </a>
+          </div>
+          <span class="city"><img src="{% static 'img/location.svg' %}" alt="location" class="city__img">м. Івано-Франківськ, вул.
+            Островського 29</span>
+          <div class="schedule">
+            <span class="schedule__item">ПН-ПН: 9.00 - 19:00</span>
+            <span class="schedule__item">CБ: 10.00 - 14.00</span>
+            <span class="schedule__item">НД: Вихідний</span>
+          </div>
+        </div>
+        <nav class="desktopNav">
+          <a href="index" class="desktopNav__link">головна</a>
+          <div class="dropdown">
+            <div class="dropdown__title">послуги та товари</div>
+            <div class="dropdown__content">
+              <a href="warmGlass" class="dropdown__content__link">Тепле скло</a>
+              <a href="compositeReinforcement" class="dropdown__content__link">Композитна арматура</a>
+              <a href="biofireplaces" class="dropdown__content__link">Біокаміни</a>
+              <a href="argonWelding" class="dropdown__content__link">Аргонове зварювання</a>
+              <a href="weldingServices" class="dropdown__content__link">Послуги зварювання</a>
+              <a href="framelessGlazing" class="dropdown__content__link">Безрамне скління</a>
+              <a href="3dDesing" class="dropdown__content__link">Дизайн 3D візуалізацій</a>
+            </div>
+          </div>
+          <div class="dropdown">
+            <div class="dropdown__title">гартоване скло</div>
+            <div class="dropdown__content">
+              <a href="glassDoors" class="dropdown__content__link">Склянні двері</a>
+              <a href="glassShowers" class="dropdown__content__link">Склянні душові кабіни</a>
+              <a href="railings" class="dropdown__content__link">Перила</a>
+              <a href="roofs" class="dropdown__content__link">Дашки</a>
+              <a href="floors" class="dropdown__content__link">Підлоги</a>
+              <a href="roofsAndGlazing" class="dropdown__content__link">Дашки та скління з
+                полі</a>
+              <span class="dropdown__content__link dropdown__content__link--blue">Інше</span>
+              <a href="interiorItems" class="dropdown__content__link">Предмети інтер’єру</a>
+            </div>
+          </div>
+          <div class="dropdown">
+            <div class="dropdown__title">металоконструкції</div>
+            <div class="dropdown__content">
+              <a href="ladders" class="dropdown__content__link">Сходи</a>
+              <a href="gate" class="dropdown__content__link">Ворота</a>
+              <a href="outdoorFurniture" class="dropdown__content__link">Вуличні меблі</a>
+              <a href="publicStops" class="dropdown__content__link">Зупинки громадського
+                транспорту</a>
+              <a href="fences" class="dropdown__content__link">Огорожі</a>
+            </div>
+          </div>
+          <div class="dropdown">
+            <div class="dropdown__title">вироби з нержавійки</div>
+            <div class="dropdown__content">
+              <a href="railingsAndHandrails" class="dropdown__content__link">Перила та
+                поручні</a>
+              <a href="glassRoof" class="dropdown__content__link">Дашки зі скла та
+                нержавійки</a>
+              <a href="stairs" class="dropdown__content__link">Сходи з нержавійки</a>
+              <a href="fences" class="dropdown__content__link">Огорожі</a>
+              <a href="racks" class="dropdown__content__link">Стелажі з нержавійки</a>
+              <a href="tables" class="dropdown__content__link">Столи з нержавійки</a>
+            </div>
+          </div>
+          <a href="about" class="desktopNav__link">про нас</a>
+          <a href="contact" class="desktopNav__link">контакти</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+  <section class="burger">
+    <nav id="nav">
+      <a href="../index.html">головна</a>
+      <ul class="menu">
+        <li class="menu__item">Послуги та товари
+          <ul class="submenu">
+            <li class="submenu__item"><a href="warmGlass">Тепле скло</a></li>
+            <li class="submenu__item"><a href="compositeReinforcement">Композитна арматура</a></li>
+            <li class="submenu__item"><a href="biofireplaces">Біокаміни</a></li>
+            <li class="submenu__item"><a href="argonWelding">Аргонове зварювання</a></li>
+            <li class="submenu__item"><a href="weldingServices">Послуги зварювання</a></li>
+            <li class="submenu__item"><a href="framelessGlazing">Безрамне скління</a></li>
+            <li class="submenu__item"><a href="3dDesing">Дизайн 3D візуалізацій</a></li>
+          </ul>
+        </li>
+
+        <li class="menu__item">гартоване скло
+          <ul class="submenu">
+            <li class="submenu__item"><a href="glassDoors">Склянні двері</a></li>
+            <li class="submenu__item"><a href="glassShowers">Склянні душові кабіни</a></li>
+            <li class="submenu__item"><a href="railings">Перила</a></li>
+            <li class="submenu__item"><a href="roofs">Дашки</a></li>
+            <li class="submenu__item"><a href="floors">Підлоги</a></li>
+            <li class="submenu__item"><a href="roofsAndGlazing">Дашки та скління з полі</a></li>
+            <li class="submenu__item submenu__item--blue">Інше</li>
+            <li class="submenu__item"><a href="interiorItems">Предмети інтер’єру</a></li>
+        </li>
+
+      </ul>
+      <li class="menu__item">металоконструкції
+        <ul class="submenu">
+          <li class="submenu__item"><a href="ladders">Сходи</a></li>
+          <li class="submenu__item"><a href="gate">Ворота</a></li>
+          <li class="submenu__item"><a href="outdoorFurniture">Вуличні меблі</a></li>
+          <li class="submenu__item"><a href="publicStops">Зупинки громадського транспорту</a>
+          </li>
+          <li class="submenu__item"><a href="fences">Огорожі</a></li>
+        </ul>
+      </li>
+
+      <li class="menu__item">вироби з нержавійки
+        <ul class="submenu">
+          <li class="submenu__item"><a href="railingsAndHandrails">Перила та поручні</a>
+          </li>
+          <li class="submenu__item"><a href="glassRoof">Дашки зі скла та нержавійки</a>
+          </li>
+          <li class="submenu__item"><a href="stairs">Сходи з нержавійки</a></li>
+          <li class="submenu__item"><a href="fences">Огорожі</a></li>
+          <li class="submenu__item"><a href="racks">Стелажі з нержавійки</a></li>
+          <li class="submenu__item"><a href="tables">Столи з нержавійки</a></li>
+        </ul>
+      </li>
+
+      </ul>
+
+      <a href="about">про нас</a>
+      <a href="contact">контакти</a>
+    </nav>
+    <div class="locationAndGraphic">
+      <div class="addr">
+        <span>м. Івано-Франківськ</span>
+        <span>вул. Островського 29</span>
+      </div>
+      <div class="graphic">
+        <span>ПН-ПН: 9.00 - 19:00</span>
+        <span>CБ: 10.00 - 14.00</span>
+        <span>НД: Вихідний</span>
+      </div>
+    </div>
+  </section>
+  <section class="modal">
+    <div class="modalContainer">
+      <img src="{% static 'img/callback.svg'%}" alt="callback">
+      <h3>ЗАЛИШТЕ ЗАЯВКУ</h3>
+      <span>і ми надамо вам <br /> детальну інформацію</span>
+      <form>
+        <input type="text" placeholder="Ім'я" class="formName" required>
+        <input type="number" placeholder="Телефон" class="formPhone" required>
+        <button type="submit" class="callbackBtn" onclick="sendMail(); return false;">зв'язатись</button>
+      </form>
+    </div>
+  </section>
+  <main class="goods">
+    <section class="hero">
+      <div class="title">Зупинки громадського транспорту</div>
+      <button class="callbackBtn callbackBtn-js">замовити</button>
+    </section>
+    <section class="gallery container">
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="{% static 'img/g0.jpg'%}" alt="goods">
+          </div>
+          <div class="swiper-slide">
+            <img src="{% static 'img/g1.jpg'%}" alt="goods">
+          </div>
+          <div class="swiper-slide">
+            <img src="{% static 'img/g2.jpg'%}" alt="goods">
+          </div>
+          <div class="swiper-slide">
+            <img src="{% static 'img/g3.jpg'%}" alt="goods">
+          </div>
+        </div>
+
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+
+        <div class="swiper-scrollbar"></div>
+      </div>
+    </section>
+    <section class="about container">
+      <h2 class="title">Дизайн 3D візуалізацій</h2>
+      <p>
+        Коли немає бажання турбуватися про стан каналів у підвіконні, можна вдатися до більш сучасного способу обігріву
+        скла.
+        Для цього закличемо на допомогу електрика. Склопакети, підключені до електромережі, нагрівається до комфортної
+        температури.
+        У вимкненому стані вони мають енергозберігаючим ефектом. Для виготовлення даних склопакетів застосовується k –
+        або
+        i-скло.
+      </p>
+      <p>
+        Як відомо, скло саме по собі не проводить електричний струм. Як же можна підключити склопакет до електромережі?
+        Для
+        цього поверхню скла покривається низькоемісійним покриттям.
+      </p>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="social">
+      <a href="https://www.facebook.com/">
+        <svg width="50" height="50" viewBox="0 0 25 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M23.5307 34.9018V22.3597H26.9462L27.3988 18.0376H23.5307L23.5365 15.8744C23.5365 14.7471 23.6421 14.1431 25.2394 14.1431H27.3747V9.82056H23.9586C19.8554 9.82056 18.4112 11.9172 18.4112 15.4432V18.0381H15.8535V22.3602H18.4112V34.9018H23.5307Z" />
+        </svg>
+      </a>
+      <a href="https://telegram.org/">
+        <svg width="50" height="55" viewBox="0 0 55 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M28.42 15C19.9012 15 13 21.9022 13 30.42C13 38.9378 19.9022 45.84 28.42 45.84C36.9388 45.84 43.84 38.9378 43.84 30.42C43.84 21.9022 36.9378 15 28.42 15ZM35.9937 25.5642L33.4628 37.4903C33.2758 38.3359 32.7724 38.5409 32.0701 38.1429L28.2151 35.3017L26.3557 37.0924C26.1508 37.2973 25.9767 37.4714 25.5787 37.4714L25.8523 33.5478L32.9963 27.0933C33.3076 26.8197 32.9276 26.6645 32.5167 26.9381L23.6876 32.4962L19.8823 31.3084C19.0556 31.0477 19.0367 30.4817 20.0564 30.0837L34.9233 24.3505C35.6137 24.1018 36.2166 24.5186 35.9927 25.5632L35.9937 25.5642Z" />
+        </svg>
+      </a>
+      <a href="mailto:budmoda.if@gmail.com">
+        <svg width="54" height="54" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M43.333 40.0001H39.9997V25.4167L29.9997 31.6667L19.9997 25.4167V40.0001H16.6663V20.0001H18.6663L29.9997 27.0834L41.333 20.0001H43.333V40.0001ZM43.333 16.6667H16.6663C14.8163 16.6667 13.333 18.1501 13.333 20.0001V40.0001C13.333 40.8841 13.6842 41.732 14.3093 42.3571C14.9344 42.9822 15.7823 43.3334 16.6663 43.3334H43.333C44.2171 43.3334 45.0649 42.9822 45.69 42.3571C46.3152 41.732 46.6663 40.8841 46.6663 40.0001V20.0001C46.6663 19.116 46.3152 18.2682 45.69 17.6431C45.0649 17.0179 44.2171 16.6667 43.333 16.6667V16.6667Z" />
+        </svg>
+      </a>
+      <a href="https://instagram.com/">
+        <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M20.9732 10.744C21.2187 10.7437 21.4828 10.7438 21.7678 10.7439L22.2374 10.744C26.0001 10.744 26.4461 10.7577 27.932 10.8262C29.306 10.8899 30.0517 11.1226 30.5485 11.3181C31.2061 11.577 31.675 11.8865 32.1679 12.3865C32.6612 12.8865 32.9665 13.3626 33.2225 14.0293C33.4154 14.5322 33.6453 15.2881 33.7078 16.6809C33.7754 18.1867 33.79 18.6391 33.79 22.4513C33.79 26.2636 33.7754 26.7159 33.7078 28.2218C33.645 29.6145 33.4154 30.3704 33.2225 30.8734C32.9671 31.54 32.6612 32.0147 32.1679 32.5144C31.6747 33.0143 31.2064 33.3238 30.5485 33.5827C30.0523 33.7792 29.306 34.0113 27.932 34.075C26.4464 34.1434 26.0001 34.1583 22.2374 34.1583C18.4745 34.1583 18.0285 34.1434 16.5429 34.075C15.1689 34.0107 14.4232 33.778 13.9261 33.5824C13.2685 33.3235 12.7987 33.014 12.3055 32.5141C11.8123 32.0141 11.5069 31.5391 11.2509 30.8722C11.058 30.3693 10.8281 29.6134 10.7656 28.2206C10.6981 26.7147 10.6846 26.2624 10.6846 22.4478C10.6846 18.6331 10.6981 18.1831 10.7656 16.6773C10.8284 15.2845 11.058 14.5286 11.2509 14.0251C11.5063 13.3585 11.8123 12.8823 12.3055 12.3823C12.7987 11.8824 13.2685 11.5729 13.9261 11.3134C14.4229 11.1169 15.1689 10.8848 16.5429 10.8208C17.8429 10.7613 18.3468 10.7435 20.9732 10.7405V10.744ZM29.7599 13.1158C28.8263 13.1158 28.0688 13.8828 28.0688 14.8294C28.0688 15.7758 28.8263 16.5436 29.7599 16.5436C30.6936 16.5436 31.451 15.7758 31.451 14.8294C31.451 13.8831 30.6936 13.1152 29.7599 13.1152V13.1158ZM15.0005 22.4546C15.0005 18.4034 18.2409 15.1188 22.2376 15.1188H22.2373C26.2339 15.1188 29.4734 18.4034 29.4734 22.4546C29.4734 26.5058 26.2342 29.789 22.2376 29.789C18.2409 29.789 15.0005 26.5058 15.0005 22.4546Z" />
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M22.2375 17.6929C24.8317 17.6929 26.935 19.8246 26.935 22.4545C26.935 25.0841 24.8317 27.2161 22.2375 27.2161C19.643 27.2161 17.54 25.0841 17.54 22.4545C17.54 19.8246 19.643 17.6929 22.2375 17.6929V17.6929Z" />
+        </svg>
+      </a>
+    </div>
+    <span>Всі права захищено &copy; 2020</span>
+  </footer>
+  <script src="../../../../static/js/menu.js"></script>
+  <script src="../../../../static/js/modal.js"></script>
+  <script>
+    let mySwiper = new Swiper('.swiper-container', {
+      direction: 'horizontal',
+      spaceBetween: 10,
+      slidesPerView: 2.2,
+      scrollbar: {
+        el: '.swiper-scrollbar',
+        hide: true,
+      },
+
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+
+    });
+  </script>
+
+{% endblock %}

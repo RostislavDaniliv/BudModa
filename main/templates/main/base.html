@@ -1,0 +1,159 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    {% block head %}{% endblock %}
+  <title>{% block title %}{% endblock %}</title>
+</head>
+
+<body>
+    <header class="header">
+    <div class="menuAndLogo">
+      <div class="menu-btn">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <img src="{% static 'img/logo.svg'%}" alt="logo" class="logo">
+      <div class="invs"></div>
+    </div>
+    <div class="phones">
+      <a href="tel:0506555414" class="phones__number">
+        <img src="" alt="phone">
+        050 6 555414
+      </a>
+      <a href="tel:0681555414" class="phones__number">
+        <img src="{% static 'img/phoneInSquare.svg' %}" alt="phone">
+        068 1 555414
+      </a>
+    </div>
+    <div class="desktop">
+      <div class="container">
+        <div class="location">
+          <div class="phones">
+            <a href="tel:0506555414" class="phones__number">
+              <img src="{% static 'img/phoneInSquare.svg' %}" alt="phone">
+              050 6 555414
+            </a>
+            <a href="tel:0681555414" class="phones__number">
+              <img src="{% static 'img/phoneInSquare.svg' %}" alt="phone">
+              068 1 555414
+            </a>
+          </div>
+          <span class="city"><img src="{% static 'img/location.svg' %}" alt="location" class="city__img">м. Івано-Франківськ, вул.
+            Островського 29</span>
+          <div class="schedule">
+            <span class="schedule__item">ПН-ПН: 9.00 - 19:00</span>
+            <span class="schedule__item">CБ: 10.00 - 14.00</span>
+            <span class="schedule__item">НД: Вихідний</span>
+          </div>
+        </div>
+        <nav class="desktopNav">
+          <a href="index" class="desktopNav__link">головна</a>
+            {% for category_id, category in categories.items %}
+          <div class="dropdown">
+            <div class="dropdown__title">{{ category.name }}</div>
+            <div class="dropdown__content">
+                {% for page in category.pages %}
+                 <a href="{{ page.url }}" class="dropdown__content__link">{{ page.title }}</a>
+                {% endfor %}
+
+            </div>
+         </div>
+   {% endfor %}
+          <a href="about" class="desktopNav__link">про нас</a>
+          <a href="contact" class="desktopNav__link">контакти</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+  <section class="burger">
+    <nav id="nav">
+      <a href="../index.html">головна</a>
+      <ul class="menu">
+
+        <li class="menu__item">
+          <ul class="submenu">
+            <li class="submenu__item"><a href="warmGlass">Тепле скло</a></li>
+            <li class="submenu__item"><a href="compositeReinforcement">Композитна арматура</a></li>
+            <li class="submenu__item"><a href="biofireplaces">Біокаміни</a></li>
+            <li class="submenu__item"><a href="argonWelding">Аргонове зварювання</a></li>
+            <li class="submenu__item"><a href="weldingServices">Послуги зварювання</a></li>
+            <li class="submenu__item"><a href="framelessGlazing">Безрамне скління</a></li>
+            <li class="submenu__item"><a href="3dDesing">Дизайн 3D візуалізацій</a></li>
+
+          </ul>
+        </li>
+
+        <li class="menu__item">гартоване скло
+          <ul class="submenu">
+            <li class="submenu__item"><a href="glassDoors">Склянні двері</a></li>
+            <li class="submenu__item"><a href="glassShowers">Склянні душові кабіни</a></li>
+            <li class="submenu__item"><a href="railings">Перила</a></li>
+            <li class="submenu__item"><a href="roofs">Дашки</a></li>
+            <li class="submenu__item"><a href="floors">Підлоги</a></li>
+            <li class="submenu__item"><a href="roofsAndGlazing">Дашки та скління з полі</a></li>
+            <li class="submenu__item submenu__item--blue">Інше</li>
+            <li class="submenu__item"><a href="interiorItems">Предмети інтер’єру</a></li>
+        </li>
+
+      </ul>
+      <li class="menu__item">металоконструкції
+        <ul class="submenu">
+          <li class="submenu__item"><a href="ladders">Сходи</a></li>
+          <li class="submenu__item"><a href="gate">Ворота</a></li>
+          <li class="submenu__item"><a href="outdoorFurniture">Вуличні меблі</a></li>
+          <li class="submenu__item"><a href="publicStops">Зупинки громадського транспорту</a>
+          </li>
+          <li class="submenu__item"><a href="fences">Огорожі</a></li>
+        </ul>
+      </li>
+
+      <li class="menu__item">вироби з нержавійки
+        <ul class="submenu">
+          <li class="submenu__item"><a href="railingsAndHandrails">Перила та поручні</a>
+          </li>
+          <li class="submenu__item"><a href="glassRoof">Дашки зі скла та нержавійки</a>
+          </li>
+          <li class="submenu__item"><a href="stairs">Сходи з нержавійки</a></li>
+          <li class="submenu__item"><a href="fences">Огорожі</a></li>
+          <li class="submenu__item"><a href="racks">Стелажі з нержавійки</a></li>
+          <li class="submenu__item"><a href="tables">Столи з нержавійки</a></li>
+        </ul>
+      </li>
+
+      </ul>
+
+      <a href="about">про нас</a>
+      <a href="contact">контакти</a>
+    </nav>
+    <div class="locationAndGraphic">
+      <div class="addr">
+        <span>м. Івано-Франківськ</span>
+        <span>вул. Островського 29</span>
+      </div>
+      <div class="graphic">
+        <span>ПН-ПН: 9.00 - 19:00</span>
+        <span>CБ: 10.00 - 14.00</span>
+        <span>НД: Вихідний</span>
+      </div>
+    </div>
+  </section>
+  <section class="modal">
+    <div class="modalContainer">
+      <img src="{% static 'img/callback.svg'%}" alt="callback">
+      <h3>ЗАЛИШТЕ ЗАЯВКУ</h3>
+      <span>і ми надамо вам <br /> детальну інформацію</span>
+      <form>
+        <input type="text" placeholder="Ім'я" class="formName" required>
+        <input type="number" placeholder="Телефон" class="formPhone" required>
+        <button type="submit" class="callbackBtn" onclick="sendMail(); return false;">зв'язатись</button>
+      </form>
+    </div>
+  </section>
+  {% block content %}{% endblock %}
+</body>
+
+</html>
